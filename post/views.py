@@ -1,13 +1,26 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.contrib import admin
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 # Create your views here.
+from .models import Post
 
 
+class  PostListView(ListView):
+       model = Post
+       context_object_name = 'all_posts'
+       ordering = ['created_at']
+       queryset = Post.objects.filter(active=True)
 
-def  post_list(requset):
-    #post_list = post.objects.all()
-    return render(requset , 'post/list.html', {'post_list' : post_list})
+class  PostDetailView(DetailView):
+       model = Post    
 
-def  post_detail(requset):
-    pass    
+class  PostCreateView():
+     pass
+
+class  PostDeletView():
+     pass
+
+class PostUpdateView():
+     pass

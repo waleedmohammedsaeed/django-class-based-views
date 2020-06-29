@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='post',
+            name='Post',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=50)),
@@ -22,8 +22,8 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(upload_to='post')),
             ],
             options={
-                'verbose_name': 'post',
-                'verbose_name_plural': 'posts',
+                'verbose_name': 'Post',
+                'verbose_name_plural': 'Posts',
             },
         ),
     ]
